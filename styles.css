@@ -1,0 +1,54 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  h1 {
+    text-align: center;
+  }
+  
+  .stock-market {
+    margin-top: 20px;
+  }
+  
+  .filter-section {
+    margin-bottom: 10px;
+  }
+  
+  .error-message {
+    color: red;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  #stock-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  #stock-table th,
+  #stock-table td {
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+  }
+  
+  #stock-table th {
+    background-color: #f5f5f5;
+    text-align: left;
+  }
+  
+  #stock-table td {
+    text-align: center;
+  }
+  
+  #stock-table-body tr:hover {
+    background-color: #f5f5f5;
+  }
+      

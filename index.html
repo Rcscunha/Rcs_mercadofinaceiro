@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Stock Market Dashboard</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Stock Market Dashboard</h1>
+    <div class="stock-market">
+      <div class="filter-section">
+        <label for="country-filter">Filtrar por país:</label>
+        <select id="country-filter">
+          <option value="all">Todos</option>
+          <option value="br">Brasil</option>
+          <option value="us">Estados Unidos</option>
+        </select>
+      </div>
+      <div class="error-message" id="error-message"></div>
+      <table id="stock-table">
+        <thead>
+          <tr>
+            <th>Símbolo</th>
+            <th>Preço Atual</th>
+            <th>Variação</th>
+            <th>Porcentagem</th>
+            <th>País</th>
+          </tr>
+        </thead>
+        <tbody id="stock-table-body"></tbody>
+      </table>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
