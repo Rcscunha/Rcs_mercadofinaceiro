@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const fetchStockData = async (country) => {
     try {
       const responseAlphaVantage = await fetch(
-        `https://www.alphavantage.co/query?function=LISTING_STATUS&state=${country}&apikey=${apiKeyAlphaVantage}`
+        'https://www.alphavantage.co/query?function=TIME_SERIES_INTRADAY&symbol=IBM&interval=5min&apikey=demo'
       );
       const dataAlphaVantage = await responseAlphaVantage.json();
 
