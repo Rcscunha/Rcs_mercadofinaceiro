@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const fetchStockData = async (country) => {
     try {
       const responseAlphaVantage = await fetch(
-        'https://www.alphavantage.co/query?function=TIME_SERIES_INTRADAY&symbol=IBM&interval=5min&apikey=demo'
+        `https://www.alphavantage.co/query?function=LISTING_STATUS&state=${country}&apikey=${apiKeyAlphaVantage}`
       );
       const dataAlphaVantage = await responseAlphaVantage.json();
 
@@ -51,9 +51,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const displayStockData = () => {
     stockTableBody.innerHTML = '';
 
-    const filteredStockData = filterStockData(stockData, countryFilter.value);
-
-    filteredStockData.forEach((stock) => {
+    stockData.forEach((stock) => {
       const row = document.createElement('tr');
       row.innerHTML = `
         <td>${stock.symbol}</td>
@@ -64,14 +62,6 @@ document.addEventListener('DOMContentLoaded', () => {
       `;
       stockTableBody.appendChild(row);
     });
-  };
-
-  const filterStockData = (data, country) => {
-    if (country === 'all') {
-      return data;
-    } else {
-      return data.filter((stock) => stock.country.toLowerCase() === country.toLowerCase());
-    }
   };
 
   const displayErrorMessage = (message) => {
@@ -89,4 +79,5 @@ document.addEventListener('DOMContentLoaded', () => {
   countryFilter.addEventListener('change', handleCountryFilter);
 
   fetchStockData('br'); // Carregar inicialmente as ações do Brasil
+  fetchStockData('us'); // Carregar as ações dos Estados Unidos
 });
